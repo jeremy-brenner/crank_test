@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  day: 1
+  subject: MyString
+  message: MyText
+  send_time: 1
+  send_zone: MyString
+
+two:
+  day: 1
+  subject: MyString
+  message: MyText
+  send_time: 1
+  send_zone: MyString
