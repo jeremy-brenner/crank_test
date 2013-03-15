@@ -1,0 +1,13 @@
+--- /usr/local/rvm/gems/ruby-1.9.3-p374/gems/jasmine-headless-webkit-0.8.4/ext/jasmine-webkit-specrunner/specrunner.cpp	2013-03-15 06:09:19.557526226 +0000
++++ specrunner.cpp	2013-03-15 16:40:25.501526243 +0000
+@@ -23,6 +23,10 @@
+ 
+ #include "Runner.h"
+ 
++#if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
++#include <getopt.h>
++#endif
++
+ #if QT_VERSION < QT_VERSION_CHECK(4, 7, 0)
+ #error Use Qt 4.7 or later version
+ #endif
