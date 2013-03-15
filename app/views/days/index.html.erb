@@ -1,0 +1,9 @@
+<div id="days"></div>
+
+<script type="text/javascript">
+  $(function() {
+    // Blog is the app name
+    window.router = new CrankTest.Routers.DaysRouter({days: <%= @days.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>

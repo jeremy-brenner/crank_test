@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+// Loads all Bootstrap javascripts
+//= require bootstrap
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink

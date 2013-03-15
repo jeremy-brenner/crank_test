@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Day:</b>
+  <%= @day.day %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @day.subject %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @day.message %>
+</p>
+
+<p>
+  <b>Send time:</b>
+  <%= @day.send_time %>
+</p>
+
+<p>
+  <b>Send zone:</b>
+  <%= @day.send_zone %>
+</p>
+
+
+<%= link_to 'Edit', edit_day_path(@day) %> |
+<%= link_to 'Back', days_path %>

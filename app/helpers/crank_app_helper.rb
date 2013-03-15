@@ -1,0 +1,2 @@
+module CrankAppHelper
+end
