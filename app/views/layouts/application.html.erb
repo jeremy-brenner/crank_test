@@ -8,17 +8,41 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="crankhead">
-      stuff
+    <div id="crankhead">
+      <img src="assets/crank_apps_logo.png" id="crank_apps_logo" >
+      <div id="sales_marker_logo">
+        <span class="powered_by">Powered by</span>
+        <span class="sales_marker">SalesMarker</span>
+      </div>
+    <!--  <img src="assets/powered_by_sales_marker.png" id="powered_by_sales_marker"> -->
     </div>
     <div class="cranknav">
-      things
+      <div id="login">
+        login
+      </div>
     </div>
     <div class="main">
       <span class="leftnav">
-        leftnav
+        <div class="leftnav lefttop">
+          <div class="btn-group">
+            <a id="create_new" class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#">
+              Create New
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- dropdown menu links -->
+            </ul>
+          </div>
+        </div>
+        <div class="leftnav leftbottom">
+          <ul>
+            <li>Campaigns</li>
+            <li>Leads</li>
+          </ul>
+        </div>
       </span>
       main
    </div> 

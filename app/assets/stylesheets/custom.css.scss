@@ -1,6 +1,8 @@
 @import "bootstrap";
 
 body {
+  font-family: 'Merriweather Sans', sans-serif;
+
   height:1436px;
   /* Firefox v3.6+ */
   background-image:-moz-linear-gradient(50% 0% -90deg,rgb(241,242,244) 0%,rgb(206,212,217) 100%); 
@@ -20,12 +22,47 @@ body {
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff1f2f4,endColorstr=#ffced4d9,GradientType=0);  
 }
 
-.crankhead {
+/* Top logo Bar */
+
+#crankhead {
   height: 59px;
   background-color: #FFFFFF;
 }
 
+/* CrankApps logo */
+
+#crank_apps_logo {
+  position: absolute;
+  top: 10px;
+  left: 137px;
+}
+
+/* Sales Marker Logo */
+
+#sales_marker_logo {
+  position: absolute;
+  top: 19px;
+  left: 935px;
+}
+
+#sales_marker_logo > .powered_by {
+  font-size: 11px;
+  color:rgb(173,173,173);
+  /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
+  text-shadow:0px 1px 0px rgba(255,255,255,0.65);
+  -ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true)";zoom:1;
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true);
+}
+
+#sales_marker_logo > .sales_marker {
+  font-size: 15px;
+  color:rgba(153,153,153,0.6);
+}
+
+/* Blue nav bar */
+
 .cranknav {
+  width: 100%;
   height: 39px;
   background: #1bc4ff;
   background: -moz-linear-gradient(top,  #1bc4ff 0%, #0a96d2 100%);
@@ -36,6 +73,14 @@ body {
   background: linear-gradient(to bottom,  #1bc4ff 0%,#0a96d2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1bc4ff', endColorstr='#0a96d2',GradientType=0 );
 }
+
+#login {
+  position: absolute;
+  top: 64px;
+  left: 963px;
+}
+
+/* Left side navigation */
 
 .leftnav {
   background-color:rgb(250,250,250);
@@ -56,12 +101,33 @@ body {
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #73ced4d9,Positive = true);
 }
 
+.leftnav.lefttop {
+  position:relative;
+  top: 0px;
+  left: 0px;
+  height: 80px;
+}
+
+#create_new {
+  position:relative;
+  top:18px;
+  left:10px;
+}
+
+.leftnav.leftbottom {
+  position:relative;
+  top: 0px;
+  left: 0px;
+}
+
+/* Main program */
+
 .main {
   background-color:rgb(250,250,250);
   position:absolute;
   height:1338px;
   left:129px;
-  width:980px;
+  width:800px;
   padding-left: 180px;
   /* Firefox v3.5+ */
   -moz-box-shadow:0px 0px 11px rgba(0,0,0,0.17);
