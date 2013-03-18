@@ -3,29 +3,19 @@
 
 describe 'Backbone objects', ->
   describe 'CrankTest', ->
-    it 'should exist', ->
+    it 'exists', ->
       expect( CrankTest ).toBeDefined()
 
     describe 'Models', ->
-      it 'should exist', ->
+      it 'exists', ->
         expect( CrankTest.Models ).toBeDefined()
+      
+      describe 'Day', ->
+        describe 'Class', ->
+          it 'exists', ->
+            expect( CrankTest.Models.Day ).toBeDefined()
 
-      describe 'Campaign Class', ->
-        it 'should exist', ->
-          expect( CrankTest.Models.Campaign ).toBeDefined()
-
-        describe 'Campaign Object', ->
-            beforeEach ->
-              @campaign = new CrankTest.Models.Campaign name: "Test Campaign"
-            
-            it 'should be named "Test Campaign"', ->
-              expect( @campaign.get "name" ).toEqual "Test Campaign"
-
-      describe 'CrankTest.Models.Day', ->
-        it 'should exist', ->
-          expect( CrankTest.Models.Day ).toBeDefined()
-
-        describe 'Day Object', ->
+        describe 'Instance', ->
             beforeEach ->
               @day = new CrankTest.Models.Day 
                 day: 1
@@ -33,98 +23,112 @@ describe 'Backbone objects', ->
                 message: "Test Message"
                 send_time: "2am"
                 send_zone: "DST"
-                campaign_id: 5
+                campaign_id: 1
             
-            it 'should have day 1', ->
+            it 'has "day" == 1', ->
               expect( @day.get "day" ).toEqual 1
 
-            it 'should have subject "Test Subject"', ->
+            it 'has "subject" == "Test Subject"', ->
               expect( @day.get "subject" ).toEqual "Test Subject"
 
-            it 'should have message "Test Message"', ->
+            it 'has "message" == "Test Message"', ->
               expect( @day.get "message" ).toEqual "Test Message"
 
-            it 'should have send_time "2am"', ->
+            it 'has "send_time" == "2am"', ->
               expect( @day.get "send_time" ).toEqual "2am"
 
-            it 'should have send_zone "DST"', ->
+            it 'has "send_zone" == "DST"', ->
               expect( @day.get "send_zone" ).toEqual "DST"
 
-            it 'should have campaign_id 5', ->
-              expect( @day.get "campaign_id" ).toEqual 5
+            it 'has "campaign_id" == 5', ->
+              expect( @day.get "campaign_id" ).toEqual 1  
+
+      describe 'Campaign', ->
+        describe 'Class', ->
+          it 'exists', ->
+            expect( CrankTest.Models.Campaign ).toBeDefined()
+
+        describe 'Instance', ->
+            beforeEach ->
+              @campaign = new CrankTest.Models.Campaign name: "Test Campaign"
+            
+            it 'has "name" == "Test Campaign"', ->
+              expect( @campaign.get "name" ).toEqual "Test Campaign"
+
 
     describe 'CrankTest.Collections', ->
-      it 'should exist', ->
+      it 'exists', ->
         expect( CrankTest.Collections ).toBeDefined()
 
       describe 'CrankTest.Collections.CampaignsCollection', ->
 
+        it 'exists', ->
+          expect( CrankTest.Collections.CampaignsCollection ).toBeDefined()
+        
+      describe 'CrankTest.Collections.DaysCollection', ->
+
         beforeEach -> 
-          @campaigns = new CrankTest.Collections.CampaignsCollection [ 
+          @campaigns = new CrankTest.Collections.DaysCollection [ 
             day: 1
             subject: "Test Subject 5.1"
             message: "Test Message 5.1"
             send_time: "2am"
             send_zone: "DST"
-            campaign_id: 5
+            campaign_id: 1
           ,
             day: 2
             subject: "Test Subject 5.2"
             message: "Test Message 5.2"
             send_time: "5pm"
             send_zone: "CST"
-            campaign_id: 5
+            campaign_id: 1
           ,
             day: 1
             subject: "Test Subject 3.1"
             message: "Test Message 3.1"
             send_time: "2am"
             send_zone: "DST"
-            campaign_id: 3
+            campaign_id: 2
           ,
             day: 2
             subject: "Test Subject 3.2"
             message: "Test Message 3.2"
             send_time: "5pm"
             send_zone: "CST"
-            campaign_id: 3
+            campaign_id: 2
           ,
             day: 3
             subject: "Test Subject 3.3"
             message: "Test Message 3.3"
             send_time: "8pm"
             send_zone: "GMT"
-            campaign_id: 3
+            campaign_id: 2
           ]
 
-        it 'should exist', ->
-          expect( CrankTest.Collections.CampaignsCollection ).toBeDefined()
-        
-      describe 'CrankTest.Collections.DaysCollection', ->
-        it 'should exist', ->
+        it 'exists', ->
           expect( CrankTest.Collections.DaysCollection ).toBeDefined()
 
     describe 'CrankTest.Routers', ->
-      it 'should exist', ->
+      it 'exists', ->
         expect( CrankTest.Routers ).toBeDefined()
 
       describe 'CrankTest.Routers.CampaignsRouter', ->
-        it 'should exist', ->
+        it 'exists', ->
           expect( CrankTest.Routers.CampaignsRouter ).toBeDefined()
 
       describe 'CrankTest.Routers.DaysRouter', ->
-        it 'should exist', ->
+        it 'exists', ->
           expect( CrankTest.Routers.DaysRouter ).toBeDefined()
 
     describe 'CrankTest.Views', ->
-      it 'should exist', ->
+      it 'exists', ->
         expect( CrankTest.Views ).toBeDefined()
 
       describe 'CrankTest.Views.Campaigns', ->
-        it 'should exist', ->
+        it 'exists', ->
           expect( CrankTest.Views.Campaigns ).toBeDefined()
 
       describe 'CrankTest.Views.Days', ->
-        it 'should exist', ->
+        it 'exists', ->
           expect( CrankTest.Views.Days ).toBeDefined()
 
