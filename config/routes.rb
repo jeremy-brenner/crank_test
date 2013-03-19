@@ -1,6 +1,6 @@
 CrankTest::Application.routes.draw do 
 
-  match '/', to: 'crank_test#home'
+
   
   match '/campaigns_mockup', to: 'crank_test#campaigns_mockup'
   
@@ -11,5 +11,8 @@ CrankTest::Application.routes.draw do
   resources :campaigns
 
   mount JasmineRails::Engine => "/specs" unless Rails.env.production?
+
+  match '/', to: 'crank_test#home'
+  match '*path', to: 'crank_test#home'
 
 end

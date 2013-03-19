@@ -7,3 +7,9 @@ console.log """
               All app objects can be found under the CrankTest namespace
             """
 
+jQuery ->
+  $('div.leftnav > ul > li').on 'click', (e) ->
+    $(e.currentTarget.parentElement).children().removeClass 'active'
+    $(e.currentTarget).addClass 'active' 
+
+   
