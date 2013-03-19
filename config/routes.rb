@@ -1,6 +1,6 @@
 CrankTest::Application.routes.draw do 
 
-  match '/', to: 'crank_app#home'
+  match '/', to: 'crank_test#home'
 
   resources :days
 
