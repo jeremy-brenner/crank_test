@@ -345,13 +345,13 @@ body {
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdb2400,endColorstr=#ffa51305,GradientType=0);
 }
 
-.series_details > ul {
+.series_day_list > ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
 
-.series_details > ul > li {
+.series_day_list > ul > li {
   background-color:rgb(249,249,249);
   width:248px;
   height:64px;
@@ -360,15 +360,15 @@ body {
   border-style:solid;
 }
 
-.series_details > ul > li.active {
+.series_day_list > ul > li.active {
   border-color:rgb(224,230,237) rgb(249,249,249) rgb(224,230,237) rgb(224,230,237);
 }
 
-.series_details > ul > li.clicked > span {
+.series_day_list > ul > li.clicked > span {
   opacity: 0.1;
 }
 
-.series_details > ul > li > .series_day {
+.series_day_list > ul > li > .series_day {
   position:relative;
   top: 22px;
   left: 17px;
@@ -377,7 +377,7 @@ body {
   font-size:11px;
 }
 
-.series_details > ul > li > .series_title {
+.series_day_list > ul > li > .series_title {
   position:relative;
   left: 44px;
   top: 22px;
@@ -388,12 +388,12 @@ body {
   text-align:left;
 }
 
-.series_details > ul > li.active > .series_title {
+.series_day_list > ul > li.active > .series_title {
   font-weight:bold;
   color:rgb(51,51,51);
 }
 
-.series_details > ul > li > button {
+.series_day_list > ul > li > button {
   position: relative;
   top: 19px;
   left: 45px;
