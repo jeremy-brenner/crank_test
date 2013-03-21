@@ -19,4 +19,5 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
   campaignDetails: (id) ->
     console.log "Rendering campaign details for id: #{id}"
     @view = new CrankTest.Views.CrankTest.CampaignDetailsView()
-    $("#crank_test").html(@view.render().el)
+    $("#crank_test").replaceWith @view.render().el 
+    @view.renderSubViews()
