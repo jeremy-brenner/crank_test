@@ -13,5 +13,4 @@ CrankTest::Application.routes.draw do
   # App routes
   match '/',     to: 'crank_test#home'
   match '*path', to: 'crank_test#home'
-
 end

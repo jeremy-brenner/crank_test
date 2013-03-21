@@ -9,3 +9,8 @@ window.CrankTest =
   Collections: {}
   Routers: {}
   Views: {}
+  App: {}
+
+jQuery ->
+  CrankTest.App.crank_test_router = new CrankTest.Routers.CrankTestRouter CrankTest.current_path 
+  Backbone.history.start pushState: true

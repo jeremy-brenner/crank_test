@@ -2,14 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-console.log """
-              === Starting Crank Apps Test ===
-              All app objects can be found under the CrankTest namespace
-            """
+
 
 jQuery ->
+
+  # Hack the left buttons so they press.. does nothing.
   $('div.leftnav > ul > li').on 'click', (e) ->
     $(e.currentTarget.parentElement).children().removeClass 'active'
     $(e.currentTarget).addClass 'active' 
 
-   
