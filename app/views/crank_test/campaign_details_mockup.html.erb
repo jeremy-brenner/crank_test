@@ -13,14 +13,15 @@
   </ul>
 </div>
 <div class="series_email">
-  Send email on day
-  &nbsp; 
+  <span class="email">
+    Send email on day
+  </span>
   <input id="day_input" type="text" size="3" value="1"></input> 
-  &nbsp;
-  at 
-  &nbsp;
-  <div class="btn-group">
-    <button class="btn dropdown-toggle series_time" data-toggle="dropdown">2pm <span class="caret"></span></button>
+  <span class="at">
+    at 
+  </span>
+  <div class="btn-group series_time">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">2pm <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a href="#">1am</a></li>
         <li><a href="#">2am</a></li>
@@ -28,8 +29,8 @@
         <li><a href="#">11pm</a></li>
       </ul>
   </div>
-  <div class="btn-group">
-    <button class="btn dropdown-toggle series_time" data-toggle="dropdown">PST <span class="caret"></span></button>
+  <div class="btn-group series_time">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">PST <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a href="#">DST</a></li>
         <li><a href="#">GMT</a></li>
@@ -42,10 +43,13 @@
   <p class="email_label">Email Message</p>
   <textarea>Routing with BGP is amazing. </textarea>
   <p class="content_label">Select content to send</p>
-  <select>
-    <option>Cisco 6500 Router</option>
-    <option>Cisco 7200 Router</option>
-    <option selected>Cisco 7500 Router</option>
-    <option>Cisco 7600 Router</option>
-  </select>
+  <div class="btn-group content_select">
+    <button class="btn dropdown-toggle" data-toggle="dropdown">Cisco 7500 Router <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Cisco 6500 Router</a></li>
+        <li><a href="#">Cisco 7200 Router</a></li>
+        <li><a href="#">Cisco 7500 Router</a></li>
+        <li><a href="#">Cisco 7600 Router</a></li>
+      </ul>
+  </div>
 </div>
