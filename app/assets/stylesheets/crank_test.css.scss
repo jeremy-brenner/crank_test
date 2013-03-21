@@ -6,7 +6,8 @@
 @import "bootstrap";
 
 body {
-  font-family: 'Merriweather Sans', sans-serif;
+ /* font-family: 'Merriweather Sans', sans-serif; */
+  font-family: arial, sans-serif;
   width: 1208px;
   height:1436px;
   /* Firefox v3.6+ */
@@ -59,9 +60,13 @@ body {
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true);
 }
 
-#sales_marker_logo > .sales_marker {
+#sales_marker_logo > span {
   font-size: 16px;
   color:rgba(153,153,153,0.6);
+}
+
+#sales_marker_logo > span.marker {
+  font-weight: bold;
 }
 
 /* Blue nav bar */
@@ -147,9 +152,9 @@ body {
   position:relative;
   top:18px;
   left:16px;
-  width:120px;
-  height:20px;
-  padding:10px;
+  width:124px;
+  height:24px;
+  padding:7px;
   font-size: 14px;
   font-weight: bold;
   /* Firefox v3.6+ */
@@ -305,21 +310,27 @@ body {
   position:relative;
   left:18px;
   top:21px;
-  font-weight:bold;
-  line-height:120%;
-  color:rgb(31,31,31);
-  text-align:left;
     /* Firefox v1.0+ */
   -moz-border-radius:1px ;
   /* Safari v3.0+ and by Chrome v0.2+ */
   -webkit-border-radius:1px ;
   /* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
   border-radius:1px ;
-  /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
-  text-shadow:0px 1px 0px rgba(255,255,255,0.65);
-  -ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true)";zoom:1;
-  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true);
+
+font-size:24px;
+font-weight:bold;
+line-height:120%;
+//color:rgb(31,31,31);
+text-align:left;
+/* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
+text-shadow:0px 1px 0px rgba(255,255,255,0.65);
+-ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true)";zoom:1;
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5ffffff,Positive=true);
+
 }
+
+.main > div.series_name > input::-webkit-input-placeholder { color:#000; }
+.main > div.series_name > input::-moz-placeholder { color:#000; } /* firefox 19+ */
 
 .main > div.series_name > button {
   position:absolute;
@@ -329,20 +340,23 @@ body {
   line-height:120%;
   color:rgb(255,255,255);
   height:26px;
-  border-color:rgb(72,131,15);
+
   border-width:1px;
   /* Firefox v1.0+ */
-  -moz-border-radius:3px ;
+  -moz-border-radius:2px ;
   /* Safari v3.0+ and by Chrome v0.2+ */
-  -webkit-border-radius:3px ;
+  -webkit-border-radius:2px ;
   /* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
-  border-radius:3px ;
+  border-radius:2px ;
   border-style:solid;
+
 }
 
 .main > div.series_name > button#save {
   left:823px;
   width:52px;
+
+  box-shadow: 0px 1px rgb(148,215,86) inset;
 
   /* Firefox v3.6+ */
   background-image:-moz-linear-gradient(50% 0% -90deg,rgb(124,209,44) 0%,rgb(95,160,33) 100%); 
@@ -357,11 +371,14 @@ body {
   background-image:linear-gradient(-90deg,rgb(124,209,44) 0%,rgb(95,160,33) 100%);
   -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7cd12c,endColorstr=#ff5fa021,GradientType=0)";
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7cd12c,endColorstr=#ff5fa021,GradientType=0);
+  border-color:rgb(72,131,15);
 }
 
 .main > div.series_name > button#delete {
   left:882px;
   width:72px;
+
+  box-shadow: 0px 1px rgb(230,102,77) inset;
 
   /* Firefox v3.6+ */
   background-image:-moz-linear-gradient(50% 0% -90deg,rgb(219,36,0) 0%,rgb(165,19,5) 100%); 
@@ -376,6 +393,7 @@ body {
   background-image:linear-gradient(-90deg,rgb(219,36,0) 0%,rgb(165,19,5) 100%);
   -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdb2400,endColorstr=#ffa51305,GradientType=0)";
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdb2400,endColorstr=#ffa51305,GradientType=0);
+  border-color:rgb(140,19,0);
 }
 
 .series_day_list > ul {
@@ -525,7 +543,7 @@ body {
   position:absolute;
   top: 136px;
   left: 457px;
-  font-size:11px;
+  font-size:12px;
   font-weight:bold;
   line-height:120%;
   color:rgb(51,51,51);
@@ -534,6 +552,7 @@ body {
 
 .series_data > p {
   position:absolute;
+  font-weight: bold;
   width: 482px;
   padding-left: 2px;
 }
