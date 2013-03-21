@@ -1,0 +1,18 @@
+
+KILLPERC=10;
+
+while [ 1 -eq 1 ]; do
+  PQPID=`pgrep pqiv`;
+  if [ ${PQPID} ]; then 
+    if [ `ps h -opmem -p ${PQPID} | cut -d '.' -f 1` -gt ${KILLPERC} ]; then
+      echo "Memory greater than ${KILLPERC}%, killing";
+      kill ${PQPID};
+    else
+      echo "All is well";
+    fi
+  else
+    echo "No pqiv running starting...";
+    pqiv -P100,100 -i -c -c -t -t "$@" &
+  fi
+  sleep 1
+done
