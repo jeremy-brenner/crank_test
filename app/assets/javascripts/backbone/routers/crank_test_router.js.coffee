@@ -5,22 +5,22 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
                   All app objects can be found under the CrankTest namespace
                 """
     console.log "Current path: " + CrankTest.current_path
-    @campaign_collection.fetch()
+    @campaigns_collection.fetch()
     @days_collection.fetch()
-
 
   routes:
     "campaign_list"      : "campaignList"
     "campaign_list/:id"  : "campaignDetails"
     ".*"                 : "campaignList"
 
-  campaign_collection: new CrankTest.Collections.CampaignsCollection()
+  campaigns_collection: new CrankTest.Collections.CampaignsCollection()
   days_collection:     new CrankTest.Collections.DaysCollection()
 
   campaignList: ->
-    console.log "Rendering campaignList"
-   # @view = new CrankTest.Views.CrankTest.CampaignDetailsView()
-   # $("#crank_test").html(@view.render().el)
+    console.log "Rendering campaign list"
+    @view = new CrankTest.Views.CrankTest.CampaignListView router: @
+    $("#crank_test").replaceWith @view.render().el
+    @view.renderListElements()
 
   campaignDetails: (campaign_id) ->
     console.log "Rendering campaign details for id: #{campaign_id}"

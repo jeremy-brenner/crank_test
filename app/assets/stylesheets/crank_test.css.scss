@@ -717,3 +717,33 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   -ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=-1,Color=#33000000,Positive=true)";zoom:1;
   filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=-1,Color=#33000000,Positive=true);
 }
+
+
+
+#campaign_list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#campaign_list > li {
+  background-color:rgb(249,249,249);
+  width:248px;
+  height:63px;
+  border-color:rgb(224,230,237);
+  border-width:0px 1px 1px 0px;
+  border-style:solid;
+}
+
+
+#campaign_list > li > p {
+  position:relative;
+ // left: 49px;
+  top: 20px;
+  font-size:12px;
+  font-weight:bold;
+  line-height:120%;
+  color:rgb(11,153,214);
+  text-align:center;
+}
+
