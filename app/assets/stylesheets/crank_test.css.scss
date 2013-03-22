@@ -434,6 +434,11 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
 }
 
 #series_day_list > ul > li {
+  position:relative;
+
+}
+
+#series_day_list > ul > li {
   background-color:rgb(249,249,249);
   width:248px;
   height:63px;
@@ -446,7 +451,19 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-color:rgb(224,230,237) rgb(249,249,249) rgb(224,230,237) rgb(224,230,237);
 }
 
-#series_day_list > ul > li.clicked > span {
+#series_day_list > ul > li > img.edit {
+  position:absolute;
+  left:60px;
+  top:20px;
+}
+
+#series_day_list > ul > li > img.delete {
+  position:absolute;
+  left:125px;
+  top:20px;
+}
+
+#series_day_list > ul > li.hovered > span {
   opacity: 0.1;
 }
 

@@ -26,7 +26,7 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
     console.log "Rendering day list"
     @render()
     for day in @router.days_collection.where({ campaign_id: @campaign_id })
-      view = new CrankTest.Views.CrankTest.SeriesDayListItemView({ router: @router, model: day })
+      view = new CrankTest.Views.CrankTest.SeriesDayListItemView({ campaign_id: @campaign_id, router: @router, model: day })
       $("#series_day_list > ul").append view.render().el
     
     $("#series_day_list > ul").append "<li><button>Add a new page</button></li>"
