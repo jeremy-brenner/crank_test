@@ -33,4 +33,4 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
     return this
 
   newDay: ->
-    @router.days_collection.add day: '', title: 'new', campaign_id: @campaign_id
+    @router.days_collection.newDay @campaign_id 
