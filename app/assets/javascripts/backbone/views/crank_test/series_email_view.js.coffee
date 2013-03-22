@@ -6,8 +6,6 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
     @router = options.router
     @router.campaigns_collection.on "reset", @render, @
 
-  id: "series_email"
-
   template: JST["backbone/templates/crank_test/series_email"]
 
   render: ->

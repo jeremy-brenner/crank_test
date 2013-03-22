@@ -12,5 +12,5 @@ window.CrankTest =
   App: {}
 
 jQuery ->
-  CrankTest.App.crank_test_router = new CrankTest.Routers.CrankTestRouter CrankTest.current_path 
+  CrankTest.App.crank_test_router = new CrankTest.Routers.CrankTestRouter 
   Backbone.history.start pushState: true

@@ -330,7 +330,7 @@ body {
     progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #2eced4d9,Positive = true);
 }
 
-#series_name > input {
+#series_name input {
   padding: 0px 8px;
   background-color:rgb(255,255,255);
   border-color:rgb(224,230,237);
@@ -360,10 +360,10 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
 
 }
 
-#series_name > input::-webkit-input-placeholder { color:#000; }
-#series_name > input::-moz-placeholder { color:#000; } /* firefox 19+ */
+#series_name input::-webkit-input-placeholder { color:#000; }
+#series_name input::-moz-placeholder { color:#000; } /* firefox 19+ */
 
-#series_name > button {
+#series_name button {
   position:absolute;
   top:33px;
   font-size:12px;
@@ -383,7 +383,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
 
 }
 
-#series_name > button#save {
+#series_name button#save {
   left:823px;
   width:52px;
 
@@ -405,7 +405,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-color:rgb(72,131,15);
 }
 
-#series_name > button#delete {
+#series_name button#delete {
   left:882px;
   width:72px;
 
@@ -427,18 +427,18 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-color:rgb(140,19,0);
 }
 
-#series_day_list > ul {
+#series_day_list ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
 
-#series_day_list > ul > li {
+#series_day_list ul > li {
   position:relative;
 
 }
 
-#series_day_list > ul > li {
+#series_day_list ul > li {
   background-color:rgb(249,249,249);
   width:248px;
   height:63px;
@@ -447,27 +447,27 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-style:solid;
 }
 
-#series_day_list > ul > li.active {
+#series_day_list ul > li.active {
   border-color:rgb(224,230,237) rgb(249,249,249) rgb(224,230,237) rgb(224,230,237);
 }
 
-#series_day_list > ul > li > img.edit {
+#series_day_list ul > li > img.edit {
   position:absolute;
   left:60px;
   top:20px;
 }
 
-#series_day_list > ul > li > img.delete {
+#series_day_list ul > li > img.delete {
   position:absolute;
   left:125px;
   top:20px;
 }
 
-#series_day_list > ul > li.hovered > span {
+#series_day_list ul > li.hovered > span {
   opacity: 0.1;
 }
 
-#series_day_list > ul > li > .series_day {
+#series_day_list ul > li > .series_day {
   position:relative;
   top: 20px;
   left: 21px;
@@ -476,7 +476,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   font-size:12px;
 }
 
-#series_day_list > ul > li > .series_title {
+#series_day_list ul > li > .series_title {
   position:relative;
   left: 49px;
   top: 20px;
@@ -487,12 +487,12 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   text-align:left;
 }
 
-#series_day_list > ul > li.active > .series_title {
+#series_day_list ul > li.active > .series_title {
   font-weight:bold;
   color:rgb(51,51,51);
 }
 
-#series_day_list > ul > li > button {
+#series_day_list ul > li > button {
   position: relative;
   top: 19px;
   left: 45px;
@@ -545,13 +545,13 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   font-size:12px;
 }
 
-#series_email > .email {
+#series_email .email {
   position:relative;
   top:0px;
   left:0px;
 }
 
-#series_email > #day_input {
+#series_email #day_input {
   position:relative;
   top:0px;
   left:4px;
@@ -576,20 +576,20 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   font-size:11px;
 }
 
-#series_email > .at {
+#series_email .at {
   position:relative;
   top:0px;
   left:8px;
   right:8px;
 }
 
-#series_email > div {
+#series_email > div > div {
   position:relative;
   top:0px;
   left:14px;
 }
 
-#series_email > .series_time > .btn {
+#series_email .series_time > .btn {
   position:relative;
   top:0px;
   left:0px;
@@ -612,7 +612,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   font-size:11px !important;
 }
 
-#series_email > .series_time > .btn > .caret {
+#series_email .series_time > .btn > .caret {
   position:relative;
   left:3px;
   top:0px;
@@ -637,18 +637,18 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   text-align:left;
 }
 
-#series_data > p {
+#series_data p {
   position:absolute;
   font-weight: bold;
   width: 482px;
   padding-left: 2px;
 }
 
-#series_data > p.subject_label {
+#series_data p.subject_label {
   top:8px;
 }
 
-#series_data > input {
+#series_data input {
   width: 482px;
   height: 34px;
   padding: 0px 8px;
@@ -668,11 +668,11 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-radius:1px ;
 }
 
-#series_data > p.email_label {
+#series_data p.email_label {
   top:88px;
 }
 
-#series_data > textarea {
+#series_data textarea {
   padding: 8px 8px;
   width: 482px;
   height: 182px;
@@ -693,11 +693,11 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   resize: none;
 }
 
-#series_data > p.content_label {
+#series_data p.content_label {
   top:328px;
 }
 
-#series_data > .content_select > .btn {
+#series_data .content_select > .btn {
   background-color:rgb(255,255,255);
   width: 498px;
   height: 36px;
@@ -720,7 +720,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   border-radius:1px ;
 }
 
-#series_data > .content_select > .btn > .caret {
+#series_data .content_select > .btn > .caret {
   position:relative;
   float:right;
   right:2px;
