@@ -10,6 +10,7 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
   initialize: (options) ->
     @router = options.router
     @campaign = options.campaign
+    @campaign.on "change", @render, @
 
   template: JST["backbone/templates/crank_test/campaign_list_element"]
 

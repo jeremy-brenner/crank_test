@@ -4,6 +4,8 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
   initialize: (options) ->
     @router = options.router
     @router.campaigns_collection.on "reset", @renderListElements, @
+    @router.campaigns_collection.on "add", @renderListElements, @
+    @router.campaigns_collection.on "remove", @renderListElements, @
 
   id: "crank_test"
 
