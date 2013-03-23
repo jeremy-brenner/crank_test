@@ -2,7 +2,7 @@ CrankTest.Views.CrankTest ||= {}
 
 class CrankTest.Views.CrankTest.CampaignDetailsView extends Backbone.View
   initialize: (options) ->
-    @router = options.router
+    
 
   template: JST["backbone/templates/crank_test/campaign_details"]
 
@@ -30,6 +30,6 @@ class CrankTest.Views.CrankTest.CampaignDetailsView extends Backbone.View
 
   renderSubViews: ->
     for subview in @subviews
-      subview.view ||= new CrankTest.Views.CrankTest[ subview.className ] router: @router
+      subview.view ||= new CrankTest.Views.CrankTest[ subview.className ] 
       $("\##{subview.id}").html subview.view.render().el
       subview.view.trigger "rendered"

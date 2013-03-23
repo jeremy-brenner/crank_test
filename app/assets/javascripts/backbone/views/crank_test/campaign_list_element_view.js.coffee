@@ -8,7 +8,7 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
     "click":  "selectCampaign"
 
   initialize: (options) ->
-    @router = options.router
+    @session = options.session
     @campaign = options.campaign
     @campaign.on "change", @render, @
 
@@ -19,4 +19,4 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
     return this
 
   selectCampaign: ->
-    @router.navigate "campaign_list/#{ @campaign.get('id') }", trigger: true
+    @session.set campaign_id: @campaign.get('id')

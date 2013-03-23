@@ -4,8 +4,9 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
                   === Starting Crank Apps Test ===
                   All app objects can be found under the CrankTest namespace
                 """
-    @campaigns_collection.fetch()
-    @days_collection.fetch()
+    @buildSession().buildViews()
+    @session.on 'change:day'        , @changeDay     , @
+    @session.on 'change:campaign_id', @changeCampaign, @
 
   routes:
     "campaign_list/:campaign_id"           : "campaignDetails"
@@ -13,20 +14,30 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
     "campaign_list"                        : "campaignList"
     ".*"                                   : "campaignList"
 
-  campaigns_collection: new CrankTest.Collections.CampaignsCollection()
-  days_collection:      new CrankTest.Collections.DaysCollection()
-  session_data:         new Backbone.Model();
+
+  buildSession: ->
+    @session = new CrankTest.Models.Session
+      router     : @
+      days       : new CrankTest.Collections.DaysCollection()
+      campaigns  : new CrankTest.Collections.CampaignsCollection()
+    @session.get('days').fetch();
+    @session.get('campaigns').fetch();
+    CrankTest.App.session = @session;
+    @
+
+  buildViews: ->
+    @list_view    = new CrankTest.Views.CrankTest.CampaignListView()
+    @details_view = new CrankTest.Views.CrankTest.CampaignDetailsView()
+    @
 
   campaignList: ->
     console.log "Rendering campaign list"
-    @list_view ||= new CrankTest.Views.CrankTest.CampaignListView router: @
     $('#crank_test').html @list_view.render().el
     @list_view.renderListElements()
 
   campaignDetails: ( campaign_id ) ->
     @session_data.set campaign_id: campaign_id
     console.log "Rendering campaign details for id: #{campaign_id}"
-    @details_view ||= new CrankTest.Views.CrankTest.CampaignDetailsView router: @
     $('#crank_test').html @details_view.render().el 
     @details_view.renderSubViews()
 
@@ -34,3 +45,8 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
     @session_data.set campaign_id: campaign_id, day: day
     console.log "Rendering campaign details for id: #{campaign_id}, day: #{day}"
     @campaignDetails(campaign_id)
+
+  changeDay: ->
+    console.log "New day! #{ @session.day() }"
+  changeCampaign: ->
+    console.log "New Campaign id! #{ @session.campaign_id() }"

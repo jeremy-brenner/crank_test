@@ -23,3 +23,6 @@ class CrankTest.Collections.DaysCollection extends Backbone.Collection
   newDay: (campaign_id) ->
     next_day = @nextDay(campaign_id) 
     @add day: next_day, campaign_id: campaign_id
+
+
+
