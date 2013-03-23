@@ -2,20 +2,24 @@ CrankTest.Views.CrankTest ||= {}
 
 class CrankTest.Views.CrankTest.SeriesDataView extends Backbone.View
   initialize: (options) ->
-    @router      = options.router
-
+    @session = CrankTest.App.session
+    @session.on "change:day", @render, @
 
   template: JST["backbone/templates/crank_test/series_data"]
 
-  setup: ->
-    @campaign_id = @router.session_data.get('campaign_id')
-    @day         = @router.session_data.get('day')
-    
+  events: ->
+    "keyup #subject": "changeSubject"
+
+  changeSubject: (e) ->
+    day = @session.selectedDay()
+    console.log "changing subject on day: ", day, $(e.target).val()
+    day.set('subject', $(e.target).val() )
+    true
 
   render: ->
-    @setup()
-    console.log "YOYO", @campaign_id, @day, @model, @router.days_collection
-    if @model
-      $(@el).html(@template( @model.toJSON() ))
+    if @session.selectedDay()
+      @$el.html( @template( @session.selectedDay().toJSON() ))
+    else 
+      @$el.html("")
 
     return this

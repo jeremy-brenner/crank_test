@@ -8,5 +8,5 @@ class CrankTest.Views.CrankTest.SeriesNameView extends Backbone.View
   template: JST["backbone/templates/crank_test/series_name"]
 
   render: ->
-    $(@el).html( @template( @session.currentCampaign() ))
+    $(@el).html( @template( @session.selectedCampaign() ))
     return this

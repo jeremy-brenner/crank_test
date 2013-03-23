@@ -5,8 +5,9 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
                   All app objects can be found under the CrankTest namespace
                 """
     @buildSession().buildViews()
-    @session.on 'change:day'        , @changeDay     , @
-    @session.on 'change:campaign_id', @changeCampaign, @
+    @session.on 'change:day'        , @updateNav, @
+    @session.on 'change:campaign_id', @updateNav, @    
+    @session.on 'change:view',        @changeView, @
 
   routes:
     "campaign_list/:campaign_id"           : "campaignDetails"
@@ -26,27 +27,36 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
     @
 
   buildViews: ->
-    @list_view    = new CrankTest.Views.CrankTest.CampaignListView()
-    @details_view = new CrankTest.Views.CrankTest.CampaignDetailsView()
+    @views =
+      list_view    : new CrankTest.Views.CrankTest.CampaignListView()
+      details_view : new CrankTest.Views.CrankTest.CampaignDetailsView()
     @
 
   campaignList: ->
-    console.log "Rendering campaign list"
-    $('#crank_test').html @list_view.render().el
-    @list_view.renderListElements()
+    @session.set campaign_id: null, day: null, view: 'list_view'
 
   campaignDetails: ( campaign_id ) ->
-    @session_data.set campaign_id: campaign_id
-    console.log "Rendering campaign details for id: #{campaign_id}"
-    $('#crank_test').html @details_view.render().el 
-    @details_view.renderSubViews()
+    @session.set campaign_id: campaign_id, day: null
 
   campaignDetailsDay: ( campaign_id, day ) ->
-    @session_data.set campaign_id: campaign_id, day: day
-    console.log "Rendering campaign details for id: #{campaign_id}, day: #{day}"
-    @campaignDetails(campaign_id)
+    @session.set campaign_id: campaign_id, day: day
 
-  changeDay: ->
-    console.log "New day! #{ @session.day() }"
+  updateNav: ->
+    campaign_id = @session.get("campaign_id")
+    day         = @session.get("day")
+
+    path = if campaign_id? and day?
+      "campaign_list/#{campaign_id}/day/#{day}"
+    else if campaign_id?
+      "campaign_list/#{campaign_id}"
+    else
+      ""
+    @navigate path
+
   changeCampaign: ->
     console.log "New Campaign id! #{ @session.campaign_id() }"
+
+  changeView: (e) ->
+    console.log "Switching from view #{ e._previousAttributes.view } to #{e.attributes.view}"
+    $('#crank_test').html @views[ e.attributes.view ].render().el
+    @views[ e.attributes.view ].trigger 'rendered'

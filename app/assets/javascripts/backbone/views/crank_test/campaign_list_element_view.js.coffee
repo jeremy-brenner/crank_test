@@ -8,7 +8,7 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
     "click":  "selectCampaign"
 
   initialize: (options) ->
-    @session = options.session
+    @session = CrankTest.App.session
     @campaign = options.campaign
     @campaign.on "change", @render, @
 

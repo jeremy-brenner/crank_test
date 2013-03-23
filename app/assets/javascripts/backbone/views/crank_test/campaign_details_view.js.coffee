@@ -2,7 +2,7 @@ CrankTest.Views.CrankTest ||= {}
 
 class CrankTest.Views.CrankTest.CampaignDetailsView extends Backbone.View
   initialize: (options) ->
-    
+    @on "rendered", @renderSubViews, @
 
   template: JST["backbone/templates/crank_test/campaign_details"]
 

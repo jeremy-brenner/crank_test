@@ -4,10 +4,10 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
   initialize: (options) ->
     @session      = CrankTest.App.session
     @campaigns = @session.get "campaigns"
-    @campaigns.on "reset"   , @renderListElements, @
-    @campaigns.on "add"     , @renderListElements, @
-    @campaigns.on "remove"  , @renderListElements, @
-    @on           "rendered", @renderListElements, @
+    @campaigns.on "reset"   , @renderSubViews, @
+    @campaigns.on "add"     , @renderSubViews, @
+    @campaigns.on "remove"  , @renderSubViews, @
+    @on           "rendered", @renderSubViews, @
 
   template: JST["backbone/templates/crank_test/campaign_list"]
 
@@ -15,7 +15,7 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
     $(@el).html(@template())
     return this
 
-  renderListElements: ->
+  renderSubViews: ->
     @render()
     for campaign in @campaigns.models
       view = new CrankTest.Views.CrankTest.CampaignListElementView session: @session, campaign: campaign
