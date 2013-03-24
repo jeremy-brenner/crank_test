@@ -22,10 +22,12 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
     @current_day.set 'day': newDay
 
   storeTime: (e) ->
+    console.log "storeDay"
     newTime = $(e.target).html()
     @current_day.set 'send_time': newTime
 
   storeZone: (e) ->
+    console.log "storeZone"
     newZone = $(e.target).html()
     @current_day.set 'send_zone': newZone
 
