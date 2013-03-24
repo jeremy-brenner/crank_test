@@ -23,17 +23,10 @@ class CrankTest.Views.CrankTest.SeriesNameView extends Backbone.View
     @session.selectedCampaign().set 'name': newName
 
   doSave: ->
-    @session.selectedCampaign().save( null )
-    for day in @session.selectedDays()
-      day.save()
-    @doBack()
-    
+    @session.doSave()
 
   doDelete: ->
-    for day in @session.selectedDays()
-      day.destroy()
-    @session.selectedCampaign().destroy()
-    @doBack()
+    @session.doDelete()
 
   doBack: -> 
-    @session.router().campaignList()
+    @session.doBack()

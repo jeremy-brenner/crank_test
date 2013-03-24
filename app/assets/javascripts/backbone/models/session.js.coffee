@@ -57,5 +57,22 @@ class CrankTest.Models.Session extends Backbone.Model
   checkAndFixDay: ->
     unless @selectedDay()? 
       @day @days().last()?.get('day')
-      console.log "uwt"
+
+  doSave: ->
+    @selectedCampaign().save( null, { success: @saveDays } ) 
+
+  saveDays: (campaign) =>
+    console.log "saveDays", campaign, @selectedDays(), @
+    day.save({campaign_id:campaign.id}) for day in @selectedDays()
+    @doBack()
+
+
+  doDelete: ->
+    for day in @selectedDays()
+      day.destroy()
+    @selectedCampaign().destroy()
+    @doBack()
+
+  doBack: -> 
+    @router().campaignList()
 

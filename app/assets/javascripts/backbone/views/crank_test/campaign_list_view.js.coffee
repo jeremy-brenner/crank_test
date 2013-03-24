@@ -19,11 +19,8 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
   renderSubViews: ->
     @render()
     for campaign in @campaigns.models
-      view = new CrankTest.Views.CrankTest.CampaignListElementView session: @session, campaign: campaign
+      view = new CrankTest.Views.CrankTest.CampaignListElementView campaign: campaign
       $("#campaign_list").append view.render().el
-    view = new CrankTest.Views.CrankTest.CampaignListElementView session: @session, campaign: new Backbone.Model({ id: "new", name: "New" })
+    view = new CrankTest.Views.CrankTest.CampaignListElementView campaign: new Backbone.Model({ id: "new", name: "New" })
     $("#campaign_list").append view.render().el
     return this
-
-  selectCampaign: (e) ->
-    console.log e

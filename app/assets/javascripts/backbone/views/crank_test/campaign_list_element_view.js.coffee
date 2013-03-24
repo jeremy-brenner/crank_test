@@ -20,4 +20,11 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
     return this
 
   selectCampaign: ->
-    @session.set campaign_id: @campaign.get('id')
+    selected = if @campaign.get('id') == "new"
+      m = new CrankTest.Models.Campaign()
+      @session.campaigns().add(m)
+      m.cid
+    else
+      @campaign.get 'id'
+    
+    @session.set campaign_id: selected
