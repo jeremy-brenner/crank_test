@@ -21,8 +21,8 @@ class CrankTest.Models.Session extends Backbone.Model
       @set 'day': day
     @get('day')
 
-   router: ->
-     @get('router')
+  router: ->
+    @get('router')
 
   days: ->
     @get('days')
@@ -37,7 +37,8 @@ class CrankTest.Models.Session extends Backbone.Model
     @campaigns().get( @campaign_id() )
 
   selectedDays: ->
-    @days().where campaign_id: @campaign_id()
+    @days().where campaign_id: @campaign_id() 
+
 
   selectedDay: ->
     day = @days().where campaign_id: @campaign_id(), day: @day() 
