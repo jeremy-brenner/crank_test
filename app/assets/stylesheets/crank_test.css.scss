@@ -383,6 +383,28 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
 
 }
 
+#series_name button#back {
+  left:764px;
+  width:52px;
+
+  box-shadow: 0px 1px rgb(253,255,144) inset;
+
+  /* Firefox v3.6+ */
+  background-image:-moz-linear-gradient(50% 0% -90deg,rgb(241,243,79) 0%,rgb(160,162,1) 100%); 
+  /* safari v4.0+ and by Chrome v3.0+ */
+  background-image:-webkit-gradient(linear,50% 0%,50% 100%,color-stop(0, rgb(241,243,79)),color-stop(1, rgb(160,162,1)));
+  /* Chrome v10.0+ and by safari nightly build*/
+  background-image:-webkit-linear-gradient(-90deg,rgb(241,243,79) 0%,rgb(160,162,1) 100%);
+  /* Opera v11.10+ */
+  background-image:-o-linear-gradient(-90deg,rgb(241,243,79) 0%,rgb(160,162,1) 100%);
+  /* IE v10+ */
+  background-image:-ms-linear-gradient(-90deg,rgb(241,243,79) 0%,rgb(160,162,1) 100%);
+  background-image:linear-gradient(-90deg,rgb(241,243,79) 0%,rgb(160,162,1) 100%);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7cd12c,endColorstr=#ff5fa021,GradientType=0)";
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7cd12c,endColorstr=#ff5fa021,GradientType=0);
+  border-color:rgb(72,131,15);
+}
+
 #series_name button#save {
   left:823px;
   width:52px;
@@ -443,7 +465,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   width:248px;
   height:63px;
   border-color:rgb(224,230,237);
-  border-width:0px 1px 1px 0px;
+  border-width:0px 1px 1px 1px;
   border-style:solid;
 }
 
@@ -472,6 +494,7 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   top: 20px;
   left: 21px;
   width: 46px;
+  height: 20px;
   color:rgb(153,153,153);
   font-style:italic;
   font-size:12px;
@@ -481,6 +504,8 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   position:absolute;
   left: 98px;
   top: 20px;
+ // height: 20px;
+  vertical-align:bottom;
   font-size:12px;
   font-weight:bold;
   line-height:120%;
@@ -698,13 +723,16 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   top:328px;
 }
 
+#series_data .content_select {
+    position:absolute;
+    top:348px;
+}
+
 #series_data .content_select > .btn {
   background-color:rgb(255,255,255);
   width: 498px;
   height: 36px;
   padding: 3px 7px;
-  position:absolute;
-  top:340px;
   border-color:rgb(224,230,237);
   border-width:1px;
   border-style:solid;
@@ -725,7 +753,6 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   position:relative;
   float:right;
   right:2px;
-  top:0px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid rgb(204,204,204); 
@@ -763,5 +790,10 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#a5fffff
   line-height:120%;
   color:rgb(11,153,214);
   text-align:center;
+}
+
+.grumpy_no {
+  width:200px;
+  height:200px;
 }
 

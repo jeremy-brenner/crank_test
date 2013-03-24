@@ -8,15 +8,20 @@ class CrankTest.Views.CrankTest.SeriesDataView extends Backbone.View
   template: JST["backbone/templates/crank_test/series_data"]
 
   events: ->
-    "keyup #subject": "changeSubject"
+    "keyup #subject": "storeSubject"
+    "keyup #message": "storeMessage"
 
-  changeSubject: (e) ->
-    @session.selectedDay().set('subject', $(e.target).val() )
+  storeSubject: (e) ->
+    @model.set 'subject': $(e.target).val() 
+
+  storeMessage: (e) ->
+    @model.set 'message': $(e.target).val() 
 
   render: ->
     if @session.selectedDay()
-      @$el.html( @template( @session.selectedDay().toJSON() ))
+      @model = @session.selectedDay()
+      @$el.html( @template( @model.toJSON() ))
     else 
       @$el.html("")
-
+    @delegateEvents()
     return this

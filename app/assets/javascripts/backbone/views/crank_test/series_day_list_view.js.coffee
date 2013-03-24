@@ -4,9 +4,9 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
 
   initialize: (options) ->
     @session = CrankTest.App.session
-    @session.get('days').on "reset", @renderListElements, @
-    @session.get('days').on "add", @renderListElements, @
-    @session.get('days').on "remove", @renderListElements, @
+    @session.days().on "reset", @renderListElements, @
+    @session.days().on "add", @renderListElements, @
+    @session.days().on "remove", @renderListElements, @
     @on "rendered", @renderListElements, @
     @session.on "change:campaign_id", @renderListElements, @
 
@@ -17,6 +17,7 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    @delegateEvents()
     return this
 
   renderListElements: ->

@@ -6,25 +6,26 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
     @session.on "change:day", @render, @
 
   events: ->
-    "keyup #day_input": "changeDay"
-    "click .time li": "timeClicked"
-    "click .zone li": "zoneClicked"
+    "keyup #day_input": "storeDay"
+    "click .time li"  : "storeTime"
+    "click .zone li"  : "storeZone"
 
   template: JST["backbone/templates/crank_test/series_email"]
 
   render: ->
     $(@el).html( @template( @session.selectedCampaign()?.toJSON() ) )
+    @delegateEvents()
     return this
 
-  changeDay: (e) ->
+  storeDay: (e) ->
     newDay = $(e.target).val()
     @current_day.set 'day': newDay
 
-  timeClicked: (e) ->
+  storeTime: (e) ->
     newTime = $(e.target).html()
     @current_day.set 'send_time': newTime
 
-  zoneClicked: (e) ->
+  storeZone: (e) ->
     newZone = $(e.target).html()
     @current_day.set 'send_zone': newZone
 

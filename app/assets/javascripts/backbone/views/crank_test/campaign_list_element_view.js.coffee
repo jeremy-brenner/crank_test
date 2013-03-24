@@ -16,6 +16,7 @@ class CrankTest.Views.CrankTest.CampaignListElementView extends Backbone.View
 
   render: ->
     $(@el).html(@template( @campaign.toJSON() ))
+    @delegateEvents()
     return this
 
   selectCampaign: ->

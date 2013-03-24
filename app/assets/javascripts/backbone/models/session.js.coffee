@@ -5,6 +5,7 @@ class CrankTest.Models.Session extends Backbone.Model
   initialize: ->
     @on 'change:day', @updateView, @
     @on 'change:campaign_id', @updateView, @
+    @on 'change:campaign_id', @setDayTriggers, @
 
   defaults:
     day: null
@@ -15,8 +16,13 @@ class CrankTest.Models.Session extends Backbone.Model
     router: null
     view: null
 
-  day: ->
+  day: (day=null) ->
+    if day?
+      @set 'day': day
     @get('day')
+
+   router: ->
+     @get('router')
 
   days: ->
     @get('days')
@@ -38,7 +44,17 @@ class CrankTest.Models.Session extends Backbone.Model
     if day.length > 0 
       day[0] 
     else 
-      false
+      null
 
   updateView: ->
     @set "view", if @get('campaign_id')? then 'details_view' else 'list_view'
+
+  setDayTriggers: ->
+    console.log "setting day trigger"
+    @days().on 'remove', @checkAndFixDay, @
+
+  checkAndFixDay: ->
+    unless @selectedDay()? 
+      @day @days().last()?.get('day')
+      console.log "uwt"
+

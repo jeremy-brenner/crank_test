@@ -10,4 +10,7 @@ jQuery ->
   $('div.leftnav > ul > li').on 'click', (e) ->
     $(e.currentTarget.parentElement).children().removeClass 'active'
     $(e.currentTarget).addClass 'active' 
-
+    if $(e.currentTarget).text() == "Campaigns"
+      $('#crank_test').show()
+    else
+      $('#crank_test').hide()

@@ -13,6 +13,7 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    @delegateEvents()
     return this
 
   renderSubViews: ->

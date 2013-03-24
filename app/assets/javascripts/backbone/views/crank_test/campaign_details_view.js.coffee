@@ -26,6 +26,7 @@ class CrankTest.Views.CrankTest.CampaignDetailsView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    @delegateEvents()
     return this
 
   renderSubViews: ->
