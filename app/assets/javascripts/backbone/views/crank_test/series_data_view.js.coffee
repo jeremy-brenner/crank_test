@@ -11,10 +11,7 @@ class CrankTest.Views.CrankTest.SeriesDataView extends Backbone.View
     "keyup #subject": "changeSubject"
 
   changeSubject: (e) ->
-    day = @session.selectedDay()
-    console.log "changing subject on day: ", day, $(e.target).val()
-    day.set('subject', $(e.target).val() )
-    true
+    @session.selectedDay().set('subject', $(e.target).val() )
 
   render: ->
     if @session.selectedDay()

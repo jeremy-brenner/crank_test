@@ -1,12 +1,12 @@
 <span class="email">
   Send email on day
 </span>
-<input id="day_input" type="text" size="3" value=""></input> 
+<input id="day_input" type="text" maxlength=3 value="<%= day %>"></input> 
 <span class="at">
   at 
 </span>
 <div class="btn-group series_time">
-  <button class="btn dropdown-toggle" data-toggle="dropdown">a <span class="caret"></span></button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= send_time %> <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href='#'>1am</a></li>
       <li><a href='#'>2am</a></li>
@@ -35,7 +35,7 @@
     </ul>
 </div>
 <div class="btn-group series_time">
-  <button class="btn dropdown-toggle" data-toggle="dropdown">b <span class="caret"></span></button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= send_zone %> <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href='#'>PDT</a></li>
       <li><a href='#'>PST</a></li>

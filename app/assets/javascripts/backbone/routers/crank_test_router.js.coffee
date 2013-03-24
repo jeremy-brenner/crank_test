@@ -5,16 +5,13 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
                   All app objects can be found under the CrankTest namespace
                 """
     @buildSession().buildViews()
-    @session.on 'change:day'        , @updateNav, @
-    @session.on 'change:campaign_id', @updateNav, @    
-    @session.on 'change:view',        @changeView, @
+    @session.on 'change:day'        , @updateNav , @
+    @session.on 'change:campaign_id', @updateNav , @    
+    @session.on 'change:view'       , @changeView, @
 
   routes:
-    "campaign_list/:campaign_id"           : "campaignDetails"
-    "campaign_list/:campaign_id/day/:day"  : "campaignDetailsDay"
-    "campaign_list"                        : "campaignList"
-    ".*"                                   : "campaignList"
-
+    "campaign_list/:campaign_id(/day/:day)"  : "campaignDetails"
+    ".*"                                     : "campaignList"
 
   buildSession: ->
     @session = new CrankTest.Models.Session
@@ -35,10 +32,7 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
   campaignList: ->
     @session.set campaign_id: null, day: null, view: 'list_view'
 
-  campaignDetails: ( campaign_id ) ->
-    @session.set campaign_id: campaign_id, day: null
-
-  campaignDetailsDay: ( campaign_id, day ) ->
+  campaignDetails: ( campaign_id, day=null ) ->
     @session.set campaign_id: campaign_id, day: day
 
   updateNav: ->

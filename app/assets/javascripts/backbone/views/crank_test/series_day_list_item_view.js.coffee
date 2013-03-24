@@ -3,7 +3,9 @@ CrankTest.Views.CrankTest ||= {}
 class CrankTest.Views.CrankTest.SeriesDayListItemView extends Backbone.View
   initialize: (options) ->
     @session = CrankTest.App.session
+    
     @model.on "change:subject", @updateSubject, @
+    @model.on "change:day"    , @updateDay    , @
 
   template: JST["backbone/templates/crank_test/series_day_list_item"]
 
@@ -31,9 +33,11 @@ class CrankTest.Views.CrankTest.SeriesDayListItemView extends Backbone.View
     @$el.removeClass "hovered"
     @$el.find('img').remove()
 
-  updateTitle: ->
-    console.log $el.find(".series_title"), @$el.find(".series_title").text( )
-    @$el.find(".series_title").text( @model.get('subject') )
+  updateSubject: ->
+    @$el.find(".series_subject").text( @model.get('subject') )
+
+  updateDay: ->
+    @$el.find(".series_day").text( "Day #{@model.get('day')}" )
 
   doClick: (e) ->
     campaign_id = @session.campaign_id()
