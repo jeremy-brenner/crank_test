@@ -3,7 +3,7 @@ CrankTest.Views.CrankTest ||= {}
 class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
   initialize: (options) ->
     @session = CrankTest.App.session
-    @session.on "change:day", @render, @
+    @session.on "change:day", @render, @    
 
   events: ->
     "keyup #day_input": "storeDay"
@@ -12,18 +12,13 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
 
   template: JST["backbone/templates/crank_test/series_email"]
 
-  render: ->
-    $(@el).html( @template( @session.selectedCampaign()?.toJSON() ) )
-    @delegateEvents()
-    return this
-
   storeDay: (e) ->
     newDay = $(e.target).val()
     @current_day.set 'day': newDay
 
   storeTime: (e) ->
     console.log "storeDay"
-    newTime = $(e.target).html()
+    newTime = $(e.target).data('value')
     @current_day.set 'send_time': newTime
 
   storeZone: (e) ->
@@ -34,9 +29,10 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
   render: ->
     if @session.selectedDay()
       @current_day = @session.selectedDay()
-      @$el.html( @template( @current_day.toJSON() ))
+      @$el.html( @template( { day: @current_day } ))
       @current_day.on "change:send_time", @render, @
       @current_day.on "change:send_zone", @render, @
+      @delegateEvents()
     else 
       @$el.html("")
 

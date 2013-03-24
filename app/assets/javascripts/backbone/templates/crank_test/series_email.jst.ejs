@@ -1,41 +1,41 @@
 <span class="email">
   Send email on day
 </span>
-<input id="day_input" type="text" maxlength=3 value="<%= day %>"></input> 
+<input id="day_input" type="text" maxlength=3 value="<%= day.get('day') %>"></input> 
 <span class="at">
   at 
 </span>
 <div class="btn-group series_time time">
-  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= send_time %> <span class="caret"></span></button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= day.humanTime() %> <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li>1am</li>
-      <li>2am</li>
-      <li>3am</li>
-      <li>4am</li>
-      <li>5am</li>
-      <li>6am</li>
-      <li>7am</li>
-      <li>8am</li>
-      <li>9am</li>
-      <li>10am</li>
-      <li>11am</li>
-      <li>12pm</li>
-      <li>1pm</li>
-      <li>2pm</li>
-      <li>3pm</li>
-      <li>4pm</li>
-      <li>5pm</li>
-      <li>6pm</li>
-      <li>7pm</li>
-      <li>8pm</li>
-      <li>9pm</li>
-      <li>10pm</li>
-      <li>11pm</li>
-      <li>12am</li>
+      <li data-value="1">1am</li>
+      <li data-value="2">2am</li>
+      <li data-value="3">3am</li>
+      <li data-value="4">4am</li>
+      <li data-value="5">5am</li>
+      <li data-value="6">6am</li>
+      <li data-value="7">7am</li>
+      <li data-value="8">8am</li>
+      <li data-value="9">9am</li>
+      <li data-value="10">10am</li>
+      <li data-value="11">11am</li>
+      <li data-value="12">12pm</li>
+      <li data-value="13">1pm</li>
+      <li data-value="14">2pm</li>
+      <li data-value="15">3pm</li>
+      <li data-value="16">4pm</li>
+      <li data-value="17">5pm</li>
+      <li data-value="18">6pm</li>
+      <li data-value="19">7pm</li>
+      <li data-value="20">8pm</li>
+      <li data-value="21">9pm</li>
+      <li data-value="22">10pm</li>
+      <li data-value="23">11pm</li>
+      <li data-value="24">12am</li>
     </ul>
 </div>
 <div class="btn-group series_time zone">
-  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= send_zone %> <span class="caret"></span></button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown"><%= day.get('send_zone') %> <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li>PDT</li>
       <li>PST</li>

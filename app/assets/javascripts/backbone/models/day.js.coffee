@@ -5,9 +5,15 @@ class CrankTest.Models.Day extends Backbone.Model
     day: 0
     subject: 'New'
     message: ''
-    send_time: '9am'
+    send_time: '9'
     send_zone: 'EST'
     campaign_id: null
+
+  humanTime: ->
+    if @get('send_time') < 12
+      "#{@get('send_time')}am"
+    else
+      "#{@get('send_time')-12}pm"
 
 class CrankTest.Collections.DaysCollection extends Backbone.Collection
   model: CrankTest.Models.Day
@@ -23,6 +29,3 @@ class CrankTest.Collections.DaysCollection extends Backbone.Collection
   newDay: (campaign_id) ->
     next_day = @nextDay(campaign_id) 
     @add day: next_day, campaign_id: campaign_id
-
-
-
