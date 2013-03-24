@@ -5,8 +5,8 @@ class CrankTest.Models.Day extends Backbone.Model
     day: 0
     subject: 'New'
     message: ''
-    send_time: ''
-    send_zone: ''
+    send_time: '9am'
+    send_zone: 'EST'
     campaign_id: null
 
 class CrankTest.Collections.DaysCollection extends Backbone.Collection
