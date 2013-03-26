@@ -11,7 +11,7 @@ class CrankTest.Views.CrankTest.SeriesNameView extends Backbone.View
     "click #save"        : "doSave"
     "click #delete"      : "doDelete"
     "click #back"        : "doBack"
-    "keyup #series_name" : "storeName"
+    "keyup #series_name_input" : "storeName"
 
   render: ->
     $(@el).html( @template( @session.selectedCampaign()?.toJSON() ))
