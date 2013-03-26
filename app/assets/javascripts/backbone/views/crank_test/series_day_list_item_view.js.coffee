@@ -31,12 +31,12 @@ class CrankTest.Views.CrankTest.SeriesDayListItemView extends Backbone.View
 
   showButtons: ->
     @$el.addClass "hovered"
-    @$el.append '<img class="edit" src="/assets/edit.png">'
-    @$el.append '<img class="delete" src="/assets/delete.png">'
+    @$el.find('div').append '<img class="edit" src="/assets/edit.png">'
+    @$el.find('div').append '<img class="delete" src="/assets/delete.png">'
 
   hideButtons: ->
     @$el.removeClass "hovered"
-    @$el.find('img').remove()
+    @$el.find('div > img').remove()
 
   updateSubject: ->
     @$el.find(".series_subject").text @model.get('subject') 

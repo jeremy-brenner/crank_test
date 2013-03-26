@@ -33,7 +33,13 @@ class CrankTest.Routers.CrankTestRouter extends Backbone.Router
     @session.set campaign_id: null, day: null, view: 'list_view'
 
   campaignDetails: ( campaign_id, day=null ) ->
-    @session.set campaign_id: campaign_id, day: day
+    c_id = parseInt(campaign_id)
+    d = if day?
+      parseInt(day)
+    else
+      null
+
+    @session.set campaign_id: c_id, day: d
 
   updateNav: ->
     campaign_id = @session.get("campaign_id")

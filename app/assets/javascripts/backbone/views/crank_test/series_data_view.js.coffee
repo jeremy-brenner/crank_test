@@ -3,6 +3,7 @@ CrankTest.Views.CrankTest ||= {}
 class CrankTest.Views.CrankTest.SeriesDataView extends Backbone.View
   initialize: (options) ->
     @session = CrankTest.App.session
+    @session.days().on "reset", @render, @
     @session.on "change:day", @render, @
 
   template: JST["backbone/templates/crank_test/series_data"]

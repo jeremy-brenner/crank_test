@@ -21,14 +21,13 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
     return this
 
   renderListElements: ->
-    @campaign_id = @session.get('campaign_id')
-    console.log "Rendering day list for campaign_id #{@campaign_id}", @session.get('days').where({ campaign_id: @campaign_id })
     @render()
     for day in @session.selectedDays()
       view = new CrankTest.Views.CrankTest.SeriesDayListItemView({ model: day })
       el = $("#series_day_list ul").append view.render().el
-    $("#series_day_list ul").append "<li><button>Add a new page</button></li>"
+    $("#series_day_list ul").append "<li><div class='add_page_button'><button>Add a new page</button></div></li>"
     return this
 
   newDay: ->
-    @session.days().newDay @campaign_id
+    console.log "new day clicked"
+    @session.days().newDay @session.campaign_id()

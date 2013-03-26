@@ -37,8 +37,9 @@ class CrankTest.Models.Session extends Backbone.Model
     @campaigns().get( @campaign_id() )
 
   selectedDays: ->
-    @days().where campaign_id: @campaign_id() 
-
+    days = @days().where campaign_id: @campaign_id() 
+    _.sortBy days, (day) ->
+      parseInt( day.get('day') )
 
   selectedDay: ->
     day = @days().where campaign_id: @campaign_id(), day: @day() 

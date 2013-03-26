@@ -24,8 +24,10 @@ class CrankTest.Collections.DaysCollection extends Backbone.Collection
     if typeof last == "number"
       1
     else
-      last.get('day') + 1
+      parseInt(last.get('day')) + 1
 
   newDay: (campaign_id) ->
     next_day = @nextDay(campaign_id) 
     @add day: next_day, campaign_id: campaign_id
+
+
