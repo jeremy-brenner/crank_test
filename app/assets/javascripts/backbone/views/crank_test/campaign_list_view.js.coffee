@@ -4,9 +4,7 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
   initialize: (options) ->
     @session      = CrankTest.App.session
     @campaigns = @session.get "campaigns"
-    @campaigns.on "reset"   , @renderSubViews, @
-    @campaigns.on "add"     , @renderSubViews, @
-    @campaigns.on "remove"  , @renderSubViews, @
+    @campaigns.on "add remove reset"   , @renderSubViews, @
     @on           "rendered", @renderSubViews, @
 
   template: JST["backbone/templates/crank_test/campaign_list"]

@@ -43,12 +43,14 @@ class CrankTest.Views.CrankTest.SeriesDayListItemView extends Backbone.View
 
   updateDay: ->
     @$el.find(".series_day").text "Day #{@model.get('day')}" 
+    console.log 'calling sort'
+    @session.days().sort()
 
   doEdit: (e) ->
-    campaign_id = @session.campaign_id()
+    campaign_id = @session.campaignId()
     @session.set 'day': @model.get('day') 
 
   doDelete: (e) ->
-    campaign_id = @session.campaign_id()
+    campaign_id = @session.campaignId()
     @session.days().remove @model
 

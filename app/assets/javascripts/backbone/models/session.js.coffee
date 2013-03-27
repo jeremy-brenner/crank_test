@@ -27,26 +27,20 @@ class CrankTest.Models.Session extends Backbone.Model
   days: ->
     @get('days')
 
-  campaign_id: -> 
+  campaignId: -> 
     @get('campaign_id')
 
   campaigns: ->
     @get('campaigns')
 
   selectedCampaign: ->
-    @campaigns().get( @campaign_id() )
+    @campaigns().get( @campaignId() )
 
   selectedDays: ->
-    days = @days().where campaign_id: @campaign_id() 
-    _.sortBy days, (day) ->
-      parseInt( day.get('day') )
+    @days().byCampaignId( @campaignId() )
 
   selectedDay: ->
-    day = @days().where campaign_id: @campaign_id(), day: @day() 
-    if day.length > 0 
-      day[0] 
-    else 
-      null
+    @days().byCampaignIdAndDay( @campaignId(), @day() )
 
   updateView: ->
     @set "view", if @get('campaign_id')? then 'details_view' else 'list_view'

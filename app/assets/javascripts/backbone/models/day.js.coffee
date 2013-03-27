@@ -30,4 +30,15 @@ class CrankTest.Collections.DaysCollection extends Backbone.Collection
     next_day = @nextDay(campaign_id) 
     @add day: next_day, campaign_id: campaign_id
 
+  comparator: (model) ->
+    model.get('day')
 
+  byCampaignId: (campaign_id) ->
+    @where campaign_id: campaign_id
+
+  byCampaignIdAndDay: ( campaign_id, day ) ->
+    day = @where campaign_id: campaign_id, day: day
+    if day.length > 0 
+      day[0] 
+    else 
+      null

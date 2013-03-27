@@ -4,9 +4,7 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
 
   initialize: (options) ->
     @session = CrankTest.App.session
-    @session.days().on "reset", @renderListElements, @
-    @session.days().on "add", @renderListElements, @
-    @session.days().on "remove", @renderListElements, @
+    @session.days().on "add remove sort reset", @renderListElements, @
     @on "rendered", @renderListElements, @
     @session.on "change:campaign_id", @renderListElements, @
 
@@ -30,4 +28,4 @@ class CrankTest.Views.CrankTest.SeriesDayListView extends Backbone.View
 
   newDay: ->
     console.log "new day clicked"
-    @session.days().newDay @session.campaign_id()
+    @session.days().newDay @session.campaignId()
