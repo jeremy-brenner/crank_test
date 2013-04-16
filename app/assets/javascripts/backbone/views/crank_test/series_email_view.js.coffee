@@ -31,8 +31,7 @@ class CrankTest.Views.CrankTest.SeriesEmailView extends Backbone.View
     if @session.selectedDay()
       @current_day = @session.selectedDay()
       @$el.html( @template( { day: @current_day } ))
-      @current_day.on "change:send_time", @render, @
-      @current_day.on "change:send_zone", @render, @
+      @current_day.on "change:send_time change:send_zone", @render, @
       @delegateEvents()
     else 
       @$el.html("")

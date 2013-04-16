@@ -10,7 +10,7 @@ class CrankTest.Views.CrankTest.CampaignListView extends Backbone.View
   template: JST["backbone/templates/crank_test/campaign_list"]
 
   render: ->
-    $(@el).html(@template())
+    $(@el).html @template()
     @delegateEvents()
     return this
 

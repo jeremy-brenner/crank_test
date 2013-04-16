@@ -18,7 +18,7 @@ class CrankTest.Views.CrankTest.SeriesDayListItemView extends Backbone.View
   tagName: "li"
 
   render: ->
-    @$el.html(@template( @model.toJSON() ))
+    @$el.html( @template( @model.toJSON() ))
     @activateTab()
     @delegateEvents()
     return this
