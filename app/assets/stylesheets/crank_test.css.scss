@@ -317,8 +317,8 @@ ul {
   -webkit-box-shadow:0px 1px 3px 0px rgba(206,212,217,0.18);
   /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
   box-shadow:0px 1px 3px 0px rgba(206,212,217,0.18);
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#66e7e8eb,endColorstr=#66f1f3f4,GradientType=0),
-              progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #2eced4d9,Positive = true)";
+  -ms-filter:'progid:DXImageTransform.Microsoft.gradient(startColorstr=#66e7e8eb,endColorstr=#66f1f3f4,GradientType=0),
+              progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #2eced4d9,Positive = true)';
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66e7e8eb,endColorstr=#66f1f3f4,GradientType=0),
          progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #2eced4d9,Positive = true);
 }
