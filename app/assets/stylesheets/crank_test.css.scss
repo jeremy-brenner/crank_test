@@ -533,10 +533,8 @@ ul {
   -webkit-box-shadow:0px 2px 2px 0px rgba(153,153,153,0.4);
   /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
   box-shadow:0px 2px 2px 0px rgba(153,153,153,0.4);
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbfbfb,endColorstr=#ffe8e8e8,GradientType=0),
-              progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 2,Color = #66999999,Positive = true)";
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbfbfb,endColorstr=#ffe8e8e8,GradientType=0),
-  progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 2,Color = #66999999,Positive = true);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbfbfb,endColorstr=#ffe8e8e8,GradientType=0),progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 2,Color = #66999999,Positive = true)";
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fffbfbfb,endColorstr=#ffe8e8e8,GradientType=0),progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 2,Color = #66999999,Positive = true);
   color:rgb(89,70,76);
   /* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
   text-shadow:0px -1px 0px rgba(0,0,0,0.2);
